@@ -6,9 +6,8 @@ import { DevSupport } from "@react-buddy/ide-toolbox";
 import { ComponentPreviews, useInitial } from "./dev/index.js";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "./styles/theme.js";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout.jsx";
-import About from "./pages/About.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
