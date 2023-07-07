@@ -14,12 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <DevSupport
-          ComponentPreviews={ComponentPreviews}
-          useInitialHook={useInitial}
-        >
-          <App />
-        </DevSupport>
+        <App />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,

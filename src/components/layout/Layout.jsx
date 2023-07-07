@@ -1,8 +1,8 @@
-import { Box } from "@mui/material";
-import { Header } from "./Header.jsx";
+import Box from "@mui/material/Box";
+import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import SidePanel from "./SidePanel.jsx";
-import { Dashboard } from "./Dashboard.jsx";
+import Dashboard from "./Dashboard.jsx";
 
 export default function Layout({ children }) {
   return (

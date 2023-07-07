@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 
-export function Dashboard() {
+export default function Dashboard() {
   return (
     <>
       <Box border={"solid 5px"} borderColor={"orange"}>
