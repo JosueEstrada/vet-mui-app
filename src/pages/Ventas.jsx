@@ -1,10 +1,11 @@
 import { Box } from "@mui/material";
+import PanelesVentas from "../components/PanelesVentas.jsx";
 
 export default function Ventas() {
   return (
     <>
-      <Box border={"solid 5px"} borderColor={"violet"}>
-        Ventas Page
+      <Box>
+        <PanelesVentas />
       </Box>
     </>
   );
