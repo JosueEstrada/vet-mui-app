@@ -32,10 +32,6 @@ import HelpIcon from "@mui/icons-material/Help";
 import { Link } from "react-router-dom";
 import Footer from "./Footer.jsx";
 import { AppRoutes } from "../../routes/AppRoutes.jsx";
-import VpnKeyIcon from "@mui/icons-material/VpnKey";
-import Button from "@mui/material/Button";
-import Face6Icon from "@mui/icons-material/Face6";
-import ThemeSwitch from "../ThemeSwitch.jsx";
 
 const drawerWidth = 240;
 
@@ -214,31 +210,6 @@ export default function Layout2() {
             <PetsIcon sx={{ mr: 1 }} />
             FISIVET
           </Typography>
-          <ThemeSwitch />
-
-          <Box>
-            <Button
-              variant="contained"
-              color="secondary"
-              component={Link}
-              to={"/acceso"}
-              sx={{ marginRight: 1, color: "#fff" }}
-              startIcon={<Face6Icon />}
-            >
-              Acceso
-            </Button>
-            <Button
-              component={Link}
-              to={"/registro"}
-              variant="contained"
-              color="secondary"
-              sx={{ marginLeft: 1, color: "#fff" }}
-              startIcon={<VpnKeyIcon />}
-            >
-              Registro
-            </Button>
-          </Box>
-
           <ContainerSearch />
         </Toolbar>
       </AppBar>
@@ -306,15 +277,8 @@ export default function Layout2() {
                 onClick={() => setSelectedItem(item.name)}
                 sx={(theme) => getStyle(item.name, theme)}
               >
-                <ListItemIcon
-                  sx={{ color: item.name === "Salir" ? "red" : "" }}
-                >
-                  {item.icon}
-                </ListItemIcon>
-                <ListItemText
-                  primary={item.name}
-                  sx={{ color: item.name === "Salir" ? "red" : "inherit" }}
-                />
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.name} />
               </ListItemButton>
             </ListItem>
           ))}
