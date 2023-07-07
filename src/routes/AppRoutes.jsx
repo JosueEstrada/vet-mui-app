@@ -10,6 +10,8 @@ import Agenda from "../pages/Agenda.jsx";
 import Clientes from "../pages/Clientes.jsx";
 import Login from "../pages/Login.jsx";
 import Logout from "../pages/Logout.jsx";
+import Stock from "../pages/Stock.jsx";
+import Configuracion from "../pages/Configuracion.jsx";
 
 export const AppRoutes = () => (
   <Routes>
@@ -24,5 +26,7 @@ export const AppRoutes = () => (
     <Route path="/productos" element={<Productos />} />
     <Route path="/registro" element={<Register />} />
     <Route path="/ventas" element={<Ventas />} />
+    <Route path="/stock" element={<Stock />} />
+    <Route path="/configuracion" element={<Configuracion />} />
   </Routes>
 );

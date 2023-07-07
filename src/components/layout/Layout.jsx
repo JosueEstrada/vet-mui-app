@@ -13,11 +13,11 @@ export default function Layout({ children }) {
         width={"100vw"}
         borderColor={"goldenrod"}
       >
-        <Header />
-        <SidePanel />
+        {/*<Header />*/}
+        {/*<SidePanel />*/}
         <Dashboard />
         <main>{children}</main>
-        <Footer />
+        {/*<Footer />*/}
       </Box>
     </>
   );

@@ -1,16 +1,3 @@
-// import Box from "@mui/material/Box";
-//
-// export default function SidePanel() {
-//   return (
-//     <>
-//       <Box border={"solid 5px"} borderColor={"lightseagreen"}>
-//         Componente SIDEPANEL
-//       </Box>
-//     </>
-//   );
-// }
-
-import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -30,6 +17,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { useState } from "react";
+import PetsIcon from "@mui/icons-material/Pets.js";
+import ContainerSearch from "../ContainerSearch.jsx";
 
 const drawerWidth = 240;
 
@@ -78,9 +68,57 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function PersistentDrawerLeft() {
+const items = [
+  {
+    name: "Clientes",
+    icon: <InboxIcon />,
+    link: "clientes",
+  },
+  {
+    name: "Caja",
+    icon: <InboxIcon />,
+    link: "/caja",
+  },
+  {
+    name: "Agenda",
+    icon: <InboxIcon />,
+    link: "/agenda",
+  },
+  {
+    name: "Productos",
+    icon: <InboxIcon />,
+    link: "/productos",
+  },
+  {
+    name: "Stock",
+    icon: <InboxIcon />,
+    link: "/stock",
+  },
+  {
+    name: "Ventas",
+    icon: <InboxIcon />,
+    link: "/ventas",
+  },
+  {
+    name: "Estadísticas",
+    icon: <InboxIcon />,
+    link: "/estadisticas",
+  },
+  {
+    name: "Mi cuenta",
+    icon: <InboxIcon />,
+    link: "/configuracion",
+  },
+  {
+    name: "Salir",
+    icon: <InboxIcon />,
+    link: "/salir",
+  },
+];
+
+export default function Layout2() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -104,9 +142,22 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            fontWeight="bold"
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "flex" },
+              alignItems: "center",
+              // justifyContent: "center",
+            }}
+          >
+            <PetsIcon sx={{ mr: 1 }} />
+            FISIVET
           </Typography>
+          <ContainerSearch />
         </Toolbar>
       </AppBar>
       <Drawer
