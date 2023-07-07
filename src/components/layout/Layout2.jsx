@@ -28,28 +28,38 @@ import InventoryIcon from "@mui/icons-material/Inventory";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShopIcon from "@mui/icons-material/Shop";
 import HomeIcon from "@mui/icons-material/Home";
-import { Link } from "react-router-dom";
+import HelpIcon from "@mui/icons-material/Help";
+import { Link, Route, Routes } from "react-router-dom";
 import Footer from "./Footer.jsx";
+import Clientes from "../../pages/Clientes.jsx";
+import { AppRoutes } from "../../routes/AppRoutes.jsx";
 
 const drawerWidth = 240;
 
-const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create("margin", {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
+const MainStyled = styled("main", {
+  shouldForwardProp: (prop) => prop !== "open",
+})(({ theme, open }) => ({
+  flexGrow: 1,
+  padding: theme.spacing(3),
+  transition: theme.transitions.create("margin", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
   }),
+  marginLeft: `-${drawerWidth}px`,
+  ...(open && {
+    transition: theme.transitions.create("margin", {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  }),
+}));
+
+export const Main = ({ open, children }) => (
+  <MainStyled open={open}>
+    <DrawerHeader />
+    {children}
+  </MainStyled>
 );
 
 const AppBar = styled(MuiAppBar, {
@@ -121,6 +131,11 @@ const items2 = [
     link: "/configuracion",
   },
   {
+    name: "Ayuda",
+    icon: <HelpIcon />,
+    link: "/ayuda",
+  },
+  {
     name: "Salir",
     icon: <DangerousIcon />,
     link: "/salir",
@@ -145,9 +160,13 @@ export default function Layout2() {
     if (itemName === selectedItem) {
       return {
         bgcolor: theme.palette.primary.light,
-        color: "#fff",
+        color: "#000000",
+        border: "3px solid #000000",
         ".MuiListItemIcon-root": {
-          color: "#fff",
+          color: "#000000",
+        },
+        ".MuiTypography-root": {
+          fontWeight: 700,
         },
       };
     } else {
@@ -240,7 +259,7 @@ export default function Layout2() {
                 sx={(theme) => getStyle(item.name, theme)}
               >
                 <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.name} />
+                <ListItemText primary={<Typography>{item.name}</Typography>} />
               </ListItemButton>
             </ListItem>
           ))}
@@ -267,17 +286,13 @@ export default function Layout2() {
         </List>
       </Drawer>
       <Main open={open}>
-        <DrawerHeader />
+        {/*<Routes>*/}
+        {/*  <Route path="/clientes" element={<Clientes />} />*/}
+        {/*</Routes>*/}
+        <AppRoutes />
+
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
-          ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
-          elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
-          sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
         </Typography>
         <Footer />
       </Main>

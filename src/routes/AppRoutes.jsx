@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home.jsx";
-import About from "../pages/About.jsx";
+import Ayuda from "../pages/Ayuda.jsx";
 import Estadisticas from "../pages/Estadisticas.jsx";
 import Productos from "../pages/Productos.jsx";
 import Register from "../pages/Register.jsx";
@@ -16,17 +16,17 @@ import Configuracion from "../pages/Configuracion.jsx";
 export const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/nosotros" element={<About />} />
-    <Route path="/agenda" element={<Agenda />} />
-    <Route path="/caja" element={<Caja />} />
     <Route path="/clientes" element={<Clientes />} />
+    <Route path="/caja" element={<Caja />} />
+    <Route path="/agenda" element={<Agenda />} />
+    <Route path="/productos" element={<Productos />} />
+    <Route path="/stock" element={<Stock />} />
+    <Route path="/ventas" element={<Ventas />} />
     <Route path="/estadisticas" element={<Estadisticas />} />
+    <Route path="/configuracion" element={<Configuracion />} />
+    <Route path="/ayuda" element={<Ayuda />} />
     <Route path="/acceso" element={<Login />} />
     <Route path="/salir" element={<Logout />} />
-    <Route path="/productos" element={<Productos />} />
     <Route path="/registro" element={<Register />} />
-    <Route path="/ventas" element={<Ventas />} />
-    <Route path="/stock" element={<Stock />} />
-    <Route path="/configuracion" element={<Configuracion />} />
   </Routes>
 );
