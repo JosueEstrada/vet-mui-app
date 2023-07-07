@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import Typography from "@mui/material/Typography";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { mockDataContacts } from "../data/dataMockup";
 import HeaderTabla from "../components/HeaderTabla";
@@ -76,7 +75,7 @@ export default function Clientes() {
             <DataGrid
               rows={mockDataContacts}
               columns={columns}
-              components={{ Toolbar: GridToolbar }}
+              // components={{ Toolbar: GridToolbar }}
             />
           </Box>
         </Box>

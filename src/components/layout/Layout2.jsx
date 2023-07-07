@@ -29,9 +29,8 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShopIcon from "@mui/icons-material/Shop";
 import HomeIcon from "@mui/icons-material/Home";
 import HelpIcon from "@mui/icons-material/Help";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "./Footer.jsx";
-import Clientes from "../../pages/Clientes.jsx";
 import { AppRoutes } from "../../routes/AppRoutes.jsx";
 
 const drawerWidth = 240;
