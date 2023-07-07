@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename="/vet-mui-app/">
+      <BrowserRouter basename="/vet-mui-app">
         <App />
       </BrowserRouter>
     </ThemeProvider>
