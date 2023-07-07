@@ -11,7 +11,7 @@ const HeaderTabla = ({ title, subtitle }) => {
       >
         {title}
       </Typography>
-      <Typography align={"left"} variant="h5" color={"#110606"}>
+      <Typography align={"left"} variant="h5" color={"black"}>
         {subtitle}
       </Typography>
     </Box>
