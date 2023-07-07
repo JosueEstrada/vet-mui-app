@@ -11,6 +11,8 @@ main,
   /*margin: 0 auto;*/
   padding: 0;
   text-align: center;
+  --fc-today-bg-color: rgba(122, 255, 31, 0.68);
+  --fc-neutral-text-color: #fa0000;
 
 }
 
@@ -23,3 +25,15 @@ main,
 .list-item-drawer a:hover {
   color: black;
 }
+
+/* Cambiar el color del texto */
+.fc-event-title {
+  color: #ffffff;  /* Cambia esto al color que prefieras */
+}
+
+/* Cambiar el color de bordes del día */
+.fc-daygrid-day-frame {
+  border: 1px solid #000000;  /* Cambia esto al color que prefieras */
+}
+
+
