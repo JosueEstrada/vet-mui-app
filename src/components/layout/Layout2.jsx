@@ -18,8 +18,17 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
-import PetsIcon from "@mui/icons-material/Pets.js";
+import PetsIcon from "@mui/icons-material/Pets";
 import ContainerSearch from "../ContainerSearch.jsx";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import PersonSearchIcon from "@mui/icons-material/PersonSearch";
+import DangerousIcon from "@mui/icons-material/Dangerous";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import ShopIcon from "@mui/icons-material/Shop";
 
 const drawerWidth = 240;
 
@@ -71,47 +80,47 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const items = [
   {
     name: "Clientes",
-    icon: <InboxIcon />,
+    icon: <PersonSearchIcon />,
     link: "clientes",
   },
   {
     name: "Caja",
-    icon: <InboxIcon />,
+    icon: <PointOfSaleIcon />,
     link: "/caja",
   },
   {
     name: "Agenda",
-    icon: <InboxIcon />,
+    icon: <CalendarMonthIcon />,
     link: "/agenda",
   },
   {
     name: "Productos",
-    icon: <InboxIcon />,
+    icon: <ShopIcon />,
     link: "/productos",
   },
   {
     name: "Stock",
-    icon: <InboxIcon />,
+    icon: <InventoryIcon />,
     link: "/stock",
   },
   {
     name: "Ventas",
-    icon: <InboxIcon />,
+    icon: <MonetizationOnIcon />,
     link: "/ventas",
   },
   {
     name: "Estadísticas",
-    icon: <InboxIcon />,
+    icon: <QueryStatsIcon />,
     link: "/estadisticas",
   },
   {
     name: "Mi cuenta",
-    icon: <InboxIcon />,
+    icon: <AccountCircleIcon />,
     link: "/configuracion",
   },
   {
     name: "Salir",
-    icon: <InboxIcon />,
+    icon: <DangerousIcon />,
     link: "/salir",
   },
 ];
