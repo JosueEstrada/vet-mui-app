@@ -36,4 +36,8 @@ main,
   border: 1px solid #000000;  /* Cambia esto al color que prefieras */
 }
 
+.fc-day-today {
+  background: #d94f4f !important;
+  border: none !important;
+}
 
