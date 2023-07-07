@@ -29,6 +29,7 @@ import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShopIcon from "@mui/icons-material/Shop";
 import HomeIcon from "@mui/icons-material/Home";
 import { Link } from "react-router-dom";
+import Footer from "./Footer.jsx";
 
 const drawerWidth = 240;
 
@@ -278,6 +279,7 @@ export default function Layout2() {
           elementum integer enim neque volutpat ac tincidunt. Ornare suspendisse
           sed nisi lacus sed viverra tellus. Purus sit amet volutpat consequat
         </Typography>
+        <Footer />
       </Main>
     </Box>
   );
