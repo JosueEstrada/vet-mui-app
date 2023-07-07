@@ -105,7 +105,7 @@ export default function Home() {
                 }}
               >
                 <InventoryIcon sx={{ marginRight: 2 }} />
-                Stock
+                Stock Vacunas
               </Paper>
             </Link>
           </Grid>

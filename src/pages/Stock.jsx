@@ -11,7 +11,7 @@ export default function Stock() {
             fontWeight="bold"
             sx={{ mb: "5px" }}
           >
-            Panel de Stock
+            Panel de Stock de Vacunas
           </Typography>
           <Typography align={"left"} variant="h5" color={"#110606"}>
             Verificación del Stock de Inventario{" "}

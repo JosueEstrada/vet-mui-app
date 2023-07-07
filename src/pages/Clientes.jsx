@@ -40,7 +40,7 @@ export default function Clientes() {
         <Box m="10px">
           <HeaderTabla
             title="Clientes"
-            subtitle="Lista de Clientes para futuras referencias"
+            subtitle="Lista de Clientes y Pacientes para futuras referencias"
           />
           <Box
             m="40px 0 0 0"

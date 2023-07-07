@@ -111,7 +111,7 @@ const items = [
     link: "/productos",
   },
   {
-    name: "Stock",
+    name: "Stock Vacunas",
     icon: <InventoryIcon />,
     link: "/stock",
   },
