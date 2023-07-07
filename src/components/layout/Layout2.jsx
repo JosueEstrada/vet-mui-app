@@ -277,8 +277,15 @@ export default function Layout2() {
                 onClick={() => setSelectedItem(item.name)}
                 sx={(theme) => getStyle(item.name, theme)}
               >
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText primary={item.name} />
+                <ListItemIcon
+                  sx={{ color: item.name === "Salir" ? "red" : "" }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.name}
+                  sx={{ color: item.name === "Salir" ? "red" : "" }}
+                />
               </ListItemButton>
             </ListItem>
           ))}
