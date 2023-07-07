@@ -201,6 +201,7 @@ export default function Layout2() {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
+            bgcolor: "#dcdcdc",
           },
         }}
         variant="persistent"
@@ -226,7 +227,11 @@ export default function Layout2() {
         <Divider />
         <List>
           {items.map((item) => (
-            <ListItem key={item.name} disablePadding>
+            <ListItem
+              key={item.name}
+              disablePadding
+              className="list-item-drawer"
+            >
               <ListItemButton
                 component={Link}
                 to={item.link}
@@ -242,7 +247,11 @@ export default function Layout2() {
         <Divider />
         <List>
           {items2.map((item) => (
-            <ListItem key={item.name} disablePadding>
+            <ListItem
+              key={item.name}
+              disablePadding
+              className="list-item-drawer"
+            >
               <ListItemButton
                 component={Link}
                 to={item.link}
