@@ -11,18 +11,16 @@ import Layout from "./components/layout/Layout.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <DevSupport
-      ComponentPreviews={ComponentPreviews}
-      useInitialHook={useInitial}
-    >
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <BrowserRouter>
-          <Layout>
-            <App />
-          </Layout>
-        </BrowserRouter>
-      </ThemeProvider>
-    </DevSupport>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <DevSupport
+          ComponentPreviews={ComponentPreviews}
+          useInitialHook={useInitial}
+        >
+          <App />
+        </DevSupport>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
 );

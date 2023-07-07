@@ -1,10 +1,13 @@
 import "./App.css";
 import { AppRoutes } from "./routes/AppRoutes.jsx";
+import Layout from "./components/layout/Layout.jsx";
 
 function App() {
   return (
     <>
-      <AppRoutes />
+      <Layout>
+        <AppRoutes />
+      </Layout>
     </>
   );
 }
