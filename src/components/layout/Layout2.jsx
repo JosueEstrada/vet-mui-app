@@ -15,8 +15,6 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import ContainerSearch from "../ContainerSearch.jsx";
@@ -29,6 +27,8 @@ import DangerousIcon from "@mui/icons-material/Dangerous";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import ShopIcon from "@mui/icons-material/Shop";
+import HomeIcon from "@mui/icons-material/Home";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -76,7 +76,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
   justifyContent: "flex-end",
 }));
-
 const items = [
   {
     name: "Clientes",
@@ -108,6 +107,8 @@ const items = [
     icon: <MonetizationOnIcon />,
     link: "/ventas",
   },
+];
+const items2 = [
   {
     name: "Estadísticas",
     icon: <QueryStatsIcon />,
@@ -128,6 +129,7 @@ const items = [
 export default function Layout2() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("");
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -135,6 +137,27 @@ export default function Layout2() {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  // Función para cambiar el color del item seleccionado
+  const getStyle = (itemName, theme) => {
+    if (itemName === selectedItem) {
+      return {
+        bgcolor: theme.palette.primary.light,
+        color: "#fff",
+        ".MuiListItemIcon-root": {
+          color: "#fff",
+        },
+      };
+    } else {
+      return {
+        bgcolor: "inherit",
+        // color: "inherit",
+        ".MuiListItemIcon-root": {
+          // color: "inherit",
+        },
+      };
+    }
   };
 
   return (
@@ -154,7 +177,9 @@ export default function Layout2() {
           <Typography
             variant="h6"
             noWrap
-            component="div"
+            component={Link}
+            to={"/"}
+            color="inherit"
             fontWeight="bold"
             sx={{
               flexGrow: 1,
@@ -183,7 +208,14 @@ export default function Layout2() {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+          <ListItemButton component={Link} to={"/"}>
+            <ListItemIcon>{<HomeIcon />}</ListItemIcon>
+            <ListItemText primary={"Inicio"} />
+          </ListItemButton>
+          <IconButton
+            onClick={handleDrawerClose}
+            sx={{ "&:hover": { border: "solid" } }}
+          >
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
@@ -193,28 +225,32 @@ export default function Layout2() {
         </DrawerHeader>
         <Divider />
         <List>
-          {["Clientes", "Caja", "Agenda", "Productos", "Stock", "Ventas"].map(
-            (text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ),
-          )}
+          {items.map((item) => (
+            <ListItem key={item.name} disablePadding>
+              <ListItemButton
+                component={Link}
+                to={item.link}
+                onClick={() => setSelectedItem(item.name)}
+                sx={(theme) => getStyle(item.name, theme)}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
         <Divider />
         <List>
-          {["Estadísticas", "Mi cuenta", "Salir"].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
+          {items2.map((item) => (
+            <ListItem key={item.name} disablePadding>
+              <ListItemButton
+                component={Link}
+                to={item.link}
+                onClick={() => setSelectedItem(item.name)}
+                sx={(theme) => getStyle(item.name, theme)}
+              >
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.name} />
               </ListItemButton>
             </ListItem>
           ))}

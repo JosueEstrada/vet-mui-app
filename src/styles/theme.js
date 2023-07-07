@@ -14,6 +14,9 @@ export const theme = createTheme({
       dark: "#009d2e",
     },
   },
+  typography: {
+    fontFamily: "Roboto, Arial, sans-serif",
+  },
 });
 // type: 'dark',
 //   primary: {
