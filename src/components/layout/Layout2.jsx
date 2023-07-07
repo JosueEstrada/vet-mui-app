@@ -32,6 +32,9 @@ import HelpIcon from "@mui/icons-material/Help";
 import { Link } from "react-router-dom";
 import Footer from "./Footer.jsx";
 import { AppRoutes } from "../../routes/AppRoutes.jsx";
+import Button from "@mui/material/Button";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
+import Face6Icon from "@mui/icons-material/Face6";
 
 const drawerWidth = 240;
 
@@ -210,6 +213,30 @@ export default function Layout2() {
             <PetsIcon sx={{ mr: 1 }} />
             FISIVET
           </Typography>
+
+          <Box>
+            <Button
+              variant="contained"
+              color="secondary"
+              component={Link}
+              to={"/acceso"}
+              sx={{ marginRight: 1, color: "#fff" }}
+              startIcon={<Face6Icon />}
+            >
+              Acceso
+            </Button>
+            <Button
+              component={Link}
+              to={"/registro"}
+              variant="contained"
+              color="secondary"
+              sx={{ marginLeft: 1, color: "#fff" }}
+              startIcon={<VpnKeyIcon />}
+            >
+              Registro
+            </Button>
+          </Box>
+
           <ContainerSearch />
         </Toolbar>
       </AppBar>
