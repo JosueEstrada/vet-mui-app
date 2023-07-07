@@ -290,10 +290,6 @@ export default function Layout2() {
         {/*  <Route path="/clientes" element={<Clientes />} />*/}
         {/*</Routes>*/}
         <AppRoutes />
-
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        </Typography>
         <Footer />
       </Main>
     </Box>

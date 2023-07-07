@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { Main } from "../components/layout/Layout2.jsx";
 
 export default function Clientes() {
   return (

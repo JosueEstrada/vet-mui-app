@@ -1,7 +1,11 @@
+import { Box } from "@mui/material";
+
 export default function Stock() {
   return (
     <>
-      <h1>Stock</h1>
+      <Box border={"solid 5px"} borderColor={"violet"}>
+        Stock
+      </Box>
     </>
   );
 }
